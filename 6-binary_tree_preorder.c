@@ -5,13 +5,14 @@
  * Return: returns 1 if it's a leaf node and 0 if not
  */
 void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int)){
+  const binary_tree_t *current_node;
+
   if (!tree || !func)
   {
     return;
   }
 
-  const binary_tree_t *current_node;
-  current_node = tree;
+    current_node = tree;
 
   func(current_node->n);
   binary_tree_preorder(current_node->left, func);

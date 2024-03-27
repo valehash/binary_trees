@@ -1,6 +1,4 @@
 #include "binary_trees.h"
-
-
 /**
  *max - function to comapare two number
  *@a: The first variable
@@ -17,10 +15,13 @@ size_t max(int a, int b) {
  *Return: returns the height of a node
  */
 size_t binary_tree_height(const binary_tree_t *tree) {
+    
+    size_t left_height, right_height;
     if (tree == NULL)
         return 0;
-    size_t left_height = binary_tree_height(tree->left);
-    size_t right_height = binary_tree_height(tree->right);
+    left_height = binary_tree_height(tree->left);
+    
+    right_height = binary_tree_height(tree->right);
     return 1 + max(left_height, right_height);
 }
 /**
